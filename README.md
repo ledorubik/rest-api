@@ -4,7 +4,8 @@ This project contains rest api server built with Go
 
 ---
 ## Getting started
-1. edit "app.env" file (server's port, use tls or not, DB configuration, etc)
+1. download vendors: _go mod vendor_
+2. edit "app.env" file (server's port, use tls or not, DB configuration, etc)
 2. build docker image using script in ./deployments/
 > #### cd ./deployments
 > #### sh deploy.sh
