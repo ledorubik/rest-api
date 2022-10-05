@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  rest-api:
+    image: rest-api:latest
+    container_name: rest_api
+    restart: unless-stopped
+    build:
+      context: ../.
+      dockerfile: ./deployments/Dockerfile
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/maratmadyarov/Desktop/test_projects/portfolio/rest-api/app.env:/app/app.env
+      - /Users/maratmadyarov/Desktop/test_projects/portfolio/rest-api/ssl:/app/ssl
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
+        labels: "rest-api"
